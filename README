@@ -1,0 +1,4 @@
+FFractal is a IFS generator, capable of creating linear and non-linear(a.k.a fractal flames) systems. 
+It has a straightforward UI and is written in java. 
+Here you can find the eclipse project for it.
+The project was created by Gsavin and is forked/modified by Bilyan Borisov under the terms of the GNU license.

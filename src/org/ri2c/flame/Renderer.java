@@ -44,7 +44,7 @@ public interface Renderer
 
 		public Dot()
 		{
-			this( 6, 6 );
+			this( 1, 1 ); //originally ( 6, 6 ) edited by BBorisov
 		}
 		
 		public Dot( double sx, double sy )
@@ -53,6 +53,7 @@ public interface Renderer
 			this.sy = sy;
 		}
 		
+		@Override
 		public void rendering( DoubleBuffer points, int offset,
 				int size, Graphics2D g2d, Discretiser d, ColorProvider colorProvider )
 		{
@@ -60,6 +61,7 @@ public interface Renderer
 				renderPoint(g2d,points.get(offset+k*4),points.get(offset+k*4+1),points.get(offset+k*4+2),points.get(offset+k*4+3),d,colorProvider);
 		}
 		
+		@Override
 		public void renderPoint( Graphics2D g2d, double x, double y, double c, double f, Discretiser d, ColorProvider colorProvider )
 		{
 			e2dD.setFrame(
@@ -77,6 +79,7 @@ public interface Renderer
 	{
 		Line2D.Double l2dD = new Line2D.Double();
 		
+		@Override
 		public void rendering( DoubleBuffer points, int offset,
 				int size, Graphics2D g2d, Discretiser d, ColorProvider colorProvider )
 		{
@@ -122,6 +125,7 @@ public interface Renderer
 		double pc = Double.NaN;
 		double pf = Double.NaN;
 		
+		@Override
 		public void renderPoint( Graphics2D g2d, double x, double y, double c, double f, Discretiser d, ColorProvider colorProvider )
 		{
 			if( px != Double.NaN )
@@ -148,6 +152,7 @@ public interface Renderer
 	{
 		QuadCurve2D.Double q2dD = new QuadCurve2D.Double();
 		
+		@Override
 		public void rendering( DoubleBuffer points, int offset,
 				int size, Graphics2D g2d, Discretiser d, ColorProvider colorProvider )
 		{
@@ -196,6 +201,7 @@ public interface Renderer
 		double pc2 = Double.NaN;
 		double pf2 = Double.NaN;
 		
+		@Override
 		public void renderPoint( Graphics2D g2d, double x, double y, double c, double f, Discretiser d, ColorProvider colorProvider )
 		{
 			if( px1 != Double.NaN )
@@ -243,6 +249,7 @@ public interface Renderer
 	public static class CubicCurve
 	implements Renderer
 	{
+		@Override
 		public void rendering( DoubleBuffer points, int offset,
 				int size, Graphics2D g2d, Discretiser d, ColorProvider colorProvider )
 		{
@@ -284,6 +291,7 @@ public interface Renderer
 			}
 		}
 		
+		@Override
 		public void renderPoint( Graphics2D g2d, double x, double y, double c, double f, Discretiser d, ColorProvider colorProvider )
 		{
 			

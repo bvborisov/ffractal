@@ -28,7 +28,10 @@ import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
 import org.ri2c.flame.FFunction;
-
+/**
+ * some comments
+ * about some classes
+ */
 public class FFList
 	extends JList implements ListCellRenderer
 {
@@ -47,6 +50,7 @@ public class FFList
 		
 		addKeyListener( new KeyAdapter()
 		{
+			@Override
 			public void keyPressed( KeyEvent ke )
 			{
 				switch( ke.getKeyCode() )
@@ -70,6 +74,7 @@ public class FFList
 		model.addElement( new FFItem(ff) );
 	}
 
+	@Override
 	public Component getListCellRendererComponent(JList list, Object value,
 			int index, boolean isSelected, boolean cellHasFocus)
 	{

@@ -99,6 +99,7 @@ public class FFPreview
 		g2d.setRenderingHint( RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY );
 		g2d.setRenderingHint( RenderingHints.KEY_STROKE_CONTROL,      RenderingHints.VALUE_STROKE_PURE );
 
+		
 		//g2d.setColor( Color.WHITE );
 		//g2d.fillRect( 0, 0, thumb.getWidth(), thumb.getHeight() );
 		g2d.setColor( Color.GRAY );

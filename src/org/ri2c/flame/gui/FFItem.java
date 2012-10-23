@@ -23,6 +23,7 @@ import java.awt.Color;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 import org.ri2c.flame.FFunction;
 
@@ -38,7 +39,7 @@ public class FFItem
 	
 	public FFItem( FFunction ff )
 	{
-		super( ff.getName(), new FFPreview(ff,100,100), JLabel.LEFT );
+		super( ff.getName(), new FFPreview(ff,100,100), SwingConstants.LEFT );
 		
 		this.ff = ff;
 		

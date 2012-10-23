@@ -27,9 +27,7 @@ import java.io.File;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.IntBuffer;
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -61,6 +59,7 @@ public class RenderingContext
 			this.filename = filename;
 		}
 		
+		@Override
 		public void output()
 		{
 			try
@@ -204,7 +203,7 @@ public class RenderingContext
 			points.put( xycf [1] );
 			points.put( xycf [2] );
 			points.put( 0 );
-			//serial = String.format("(%f;%f)", xycf [0], xycf [1]);
+			//x	serial = String.format("(%f;%f)", xycf [0], xycf [1]);
 
 			int f = 1;
 			

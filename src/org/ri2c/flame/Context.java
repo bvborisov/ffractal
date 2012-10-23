@@ -22,22 +22,10 @@ package org.ri2c.flame;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Random;
-import java.util.Map;
-import java.util.HashMap;
-
-import java.awt.image.BufferedImage;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.Color;
-import java.awt.geom.CubicCurve2D;
-import java.awt.geom.Ellipse2D;
-import java.nio.DoubleBuffer;
-import javax.imageio.ImageIO;
-import java.io.File;
 
 public class Context
 {
-	BiunitSquare<Point> points;
+	//BiunitSquare<Point> points;
 	LinkedList<FFunction> flameFunctions;
 	FFunction finalFlameFunction;
 	Random random = new Random();
@@ -93,17 +81,20 @@ public class Context
 	public double [] getInitialPoint()
 	{
 		return Arrays.copyOf( initialPoint, 4 );
-	}
+		
+		
+		
+		}
 	
 	public void addFlameFunction( FFunction ff )
 	{
 		flameFunctions.add(ff);
 	}
 
-	public Point point( double x, double y )
-	{
-		return points.get(x,y);
-	}
+	//public Point point( double x, double y )
+	//{
+	//	return points.get(x,y);
+	//}
 /*
 	public BiunitSquare<Point> getPoints()
 	{
@@ -312,7 +303,8 @@ public class Context
 	
 	public static void main( String ... args )
 	{
-		/*java.util.Locale.setDefault( java.util.Locale.ROOT );
+		/*
+		 java.util.Locale.setDefault( java.util.Locale.ROOT );
 
 		Context ctx = new Context();
 		//ctx.init(3000,3000);
@@ -340,7 +332,7 @@ public class Context
 		}
 
 		for( int i = 0; i < 100; i++ ) ctx.nextPoint();
-*/
+		 */
 		//ctx.niterate(100000,args[0]);
 		//ctx.directRendering(100000,args[0],1000,1000);
 	}

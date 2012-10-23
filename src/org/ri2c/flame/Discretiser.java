@@ -19,7 +19,7 @@
  */
 package org.ri2c.flame;
 
-public class Discretiser
+public class Discretiser //converts real to ints
 {
 	double xmin, xmax, ymin, ymax;
 	int width, height;
@@ -99,7 +99,7 @@ public class Discretiser
 			x = 0;
 		}
 
-		return xmin + x * ( xmax - xmin ) / (double) ( width - 1 );
+		return xmin + x * ( xmax - xmin ) / ( width - 1 );
 	}
 
 	public double convertY( int y )
@@ -116,6 +116,6 @@ public class Discretiser
 			y = 0;
 		}
 
-		return xmin + y * ( ymax - ymin ) / (double) ( height - 1 );
+		return xmin + y * ( ymax - ymin ) / ( height - 1 );
 	}
 }

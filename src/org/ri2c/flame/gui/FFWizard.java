@@ -120,6 +120,7 @@ public class FFWizard
 			color.setBorder( BorderFactory.createTitledBorder("function color") );
 		}
 
+		@Override
 		public void restore()
 		{
 			if( FFWizard.this.ff_name != null )
@@ -131,6 +132,7 @@ public class FFWizard
 				box.setSelectedItem("manual");
 		}
 		
+		@Override
 		public void buildContent()
 		{
 			GridBagLayout bag = new GridBagLayout();
@@ -154,6 +156,7 @@ public class FFWizard
 			stateChanged(null);
 		}
 		
+		@Override
 		public void save()
 		{
 			FFWizard.this.setTitle( String.format( "\"%s\" creation", name.getText() ) );
@@ -162,6 +165,7 @@ public class FFWizard
 			FFWizard.this.ff_color = color.getValue() / 360.0;
 		}
 
+		@Override
 		public void stateChanged(ChangeEvent e)
 		{
 			color.setBackground( Color.getHSBColor( color.getValue() / 360.0f, 1, 1 ) );
@@ -185,6 +189,7 @@ public class FFWizard
 				wabcdef [i] = new JSpinner( new SpinnerNumberModel(def[i],-10,10,0.001) );
 		}
 		
+		@Override
 		public void restore()
 		{
 			if( FFWizard.this.ff_random )
@@ -198,6 +203,7 @@ public class FFWizard
 			}
 		}
 		
+		@Override
 		public void buildContent()
 		{
 			//JPanel panel = new JPanel();
@@ -231,6 +237,7 @@ public class FFWizard
 			}
 		}
 		
+		@Override
 		public void save()
 		{
 			FFWizard.this.ff_w = (Double) wabcdef [0] .getValue();
@@ -244,13 +251,13 @@ public class FFWizard
 		{
 			Random r = new Random();
 			
-			wabcdef [0] .setValue( r.nextDouble() * 2 );
-			wabcdef [1] .setValue( r.nextDouble() * 4 - 2 );
-			wabcdef [2] .setValue( r.nextDouble() * 4 - 2 );
-			wabcdef [3] .setValue( r.nextDouble() * 4 - 2 );
-			wabcdef [4] .setValue( r.nextDouble() * 4 - 2 );
-			wabcdef [5] .setValue( r.nextDouble() * 4 - 2 );
-			wabcdef [6] .setValue( r.nextDouble() * 4 - 2 );
+			wabcdef [0] .setValue(1.0);
+			for(int i=1;i<=6;i++){
+			if(Math.random()<0.5) 
+					wabcdef [i] .setValue( r.nextDouble());
+				else 
+					wabcdef [i] .setValue( -r.nextDouble());
+			}
 		}
 	}
 	
@@ -266,6 +273,7 @@ public class FFWizard
 			super( "Choose variations used in the flame function." );
 		}
 
+		@Override
 		public void buildContent()
 		{
 			vlist = new VariationsComboBox();
@@ -317,6 +325,7 @@ public class FFWizard
 			FFWizard.this.content.add( scrollList );
 		}
 		
+		@Override
 		public void save()
 		{
 			ff_variations.clear();
@@ -325,12 +334,14 @@ public class FFWizard
 				ff_variations.add( (FFVariation) vchoose.getElementAt(i) );
 		}
 		
+		@Override
 		public void restore()
 		{
 			for( FFVariation ffv: ff_variations )
 				vchoose.addElement(ffv);
 		}
 
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if( e.getActionCommand().equals("add") )
@@ -360,6 +371,7 @@ public class FFWizard
 			super( "Preview of your function" );
 		}
 
+		@Override
 		public void buildContent()
 		{
 			FFunction ff = new FFunction(ff_color,ff_data);
@@ -373,11 +385,13 @@ public class FFWizard
 			FFWizard.this.content.add( preview );
 		}
 
+		@Override
 		public void restore()
 		{
 			
 		}
 
+		@Override
 		public void save() {
 			
 		}
@@ -539,6 +553,7 @@ public class FFWizard
 		buttons.add( finish );
 	}
 	
+	@Override
 	public void actionPerformed( ActionEvent e )
 	{
 		if( e.getActionCommand().equals("cancel") )

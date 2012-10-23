@@ -34,6 +34,7 @@ public class FFunction
 			this.variation = v;
 		}
 		
+		@Override
 		public String toString()
 		{
 			return String.format( "%s (%f)", variation.getClass().getSimpleName(), weight );
@@ -98,7 +99,7 @@ public class FFunction
 		variations.add(ffv);
 	}
 
-	public void compute( double [] xy )
+	public void compute( double [] xy ) // computes the transformed x and y from array xy
 	{
 		double x = 0;
 		double y = 0;

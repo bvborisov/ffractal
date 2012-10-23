@@ -36,6 +36,7 @@ public interface ColorProvider
 			this.random = new java.util.Random();
 		}
 
+		@Override
 		public Color getColor( double x, double y,
 				double color, double frequency )
 		{
@@ -54,7 +55,7 @@ public interface ColorProvider
 		
 		public Basic()
 		{
-			this( 3.0 );
+			this( 2.5 ); //originally 3.0, edited by BBorisov - standart for LCD displays
 		}
 		
 		public Basic( double gamma )
@@ -62,6 +63,7 @@ public interface ColorProvider
 			this.gamma = gamma;
 		}
 		
+		@Override
 		public Color getColor( double x, double y,
 				double color, double frequency )
 		{

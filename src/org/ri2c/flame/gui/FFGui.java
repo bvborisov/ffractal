@@ -19,7 +19,6 @@
  */
 package org.ri2c.flame.gui;
 
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -31,7 +30,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.net.URL;
-import java.text.NumberFormat;
 import java.util.LinkedList;
 
 import javax.swing.BorderFactory;
@@ -40,7 +38,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -68,6 +65,7 @@ public class FFGui
 	/**
 	 * 
 	 */
+	//old serial version ID : private static final long serialVersionUID = -2861824179795521368L;
 	private static final long serialVersionUID = -2861824179795521368L;
 
 	protected class FunctionPane
@@ -138,6 +136,7 @@ public class FFGui
 			return fffItem.getFFunction();
 		}
 		
+		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if( e.getActionCommand().equals("ff.add") )
@@ -151,6 +150,7 @@ public class FFGui
 				FFWizard ffw = new FFWizard(frame);
 				ffw.addWizardListener( new FFWizardListener()
 				{
+					@Override
 					public void ffWizardFinished(FFWizard ffw)
 					{
 						FFunction ff = ffw.getFlameFunction();
@@ -166,6 +166,7 @@ public class FFGui
 			}
 		}
 
+		@Override
 		public void ffWizardFinished(FFWizard ffw)
 		{
 			FFunction ff = ffw.getFlameFunction();
@@ -295,6 +296,7 @@ public class FFGui
 			yorg.setValue( ( s.ymin + s.ymax ) / 2 );
 		}
 		
+		@Override
 		public void actionPerformed( ActionEvent ae )
 		{
 			if( ae.getActionCommand().equals("best") )
@@ -480,6 +482,7 @@ public class FFGui
 			add( path );
 		}
 		
+		@Override
 		public void actionPerformed( ActionEvent ae )
 		{
 			if( "choose".equals( ae.getActionCommand() ) )
@@ -527,6 +530,7 @@ public class FFGui
 			
 			list.addKeyListener( new KeyAdapter()
 			{
+				@Override
 				public void keyPressed( KeyEvent ke )
 				{
 					switch( ke.getKeyCode() )
@@ -673,6 +677,7 @@ public class FFGui
 			add( listScroll );
 		}
 		
+		@Override
 		public void actionPerformed( ActionEvent ae )
 		{
 			if( "rotation".equals(ae.getActionCommand()) )
@@ -825,6 +830,7 @@ public class FFGui
 			t.start();
 		}
 		
+		@Override
 		public void actionPerformed( ActionEvent ae )
 		{
 			if( "generate".equals(ae.getActionCommand()) )
@@ -855,6 +861,7 @@ public class FFGui
 			this.actions = actions;
 		}
 		
+		@Override
 		public void run()
 		{
 			for( int i = 0; i < actions.size(); i++)
@@ -866,6 +873,7 @@ public class FFGui
 				
 				SwingUtilities.invokeLater( new Runnable()
 				{
+					@Override
 					public void run()
 					{
 						setValue( val );
@@ -879,6 +887,7 @@ public class FFGui
 
 			SwingUtilities.invokeLater( new Runnable()
 			{
+				@Override
 				public void run()
 				{
 					setValue( ComputeThread.this.getMaximum() );
@@ -993,7 +1002,8 @@ public class FFGui
 		JDialog.setDefaultLookAndFeelDecorated(true);
 
 	    SwingUtilities.invokeLater(new Runnable() {
-	      public void run() {
+	      @Override
+		public void run() {
 	    	  SubstanceLookAndFeel.setSkin("org.pushingpixels.substance.api.skin.BusinessBlackSteelSkin");
 	    	  new FFGui();
 	      }

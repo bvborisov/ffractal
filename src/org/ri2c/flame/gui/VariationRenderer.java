@@ -32,6 +32,7 @@ class VariationRenderer
 	 */
 	private static final long serialVersionUID = 3837691310661518545L;
 	
+	@Override
 	public Component getListCellRendererComponent(JList list,
             Object value,
             int index,

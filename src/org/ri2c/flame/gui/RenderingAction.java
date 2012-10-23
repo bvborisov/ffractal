@@ -236,11 +236,13 @@ public abstract class RenderingAction
 			this.size = size;
 		}
 		
+		@Override
 		public void render(RenderingContext ctx)
 		{
 			ctx.generatePoints(size);
 		}
 		
+		@Override
 		public String toString()
 		{
 			return String.format( "Generate %d points", size );
@@ -257,11 +259,13 @@ public abstract class RenderingAction
 			this.renderer = r;
 		}
 		
+		@Override
 		public void render(RenderingContext ctx)
 		{
 			ctx.setRenderer(renderer);
 		}
 		
+		@Override
 		public String toString()
 		{
 			return String.format("Set renderer to %s",renderer.getClass().getSimpleName());
@@ -278,11 +282,13 @@ public abstract class RenderingAction
 			this.colorProvider = cp;
 		}
 		
+		@Override
 		public void render(RenderingContext ctx)
 		{
 			ctx.setColorProvider(colorProvider);
 		}
 		
+		@Override
 		public String toString()
 		{
 			return String.format("Set color provider to %s",colorProvider.getClass().getSimpleName());
@@ -292,11 +298,13 @@ public abstract class RenderingAction
 	protected static class RenderPointsAction
 		extends RenderingAction
 	{
+		@Override
 		public void render(RenderingContext ctx) 
 		{
 			ctx.renderPoints();
 		}
 		
+		@Override
 		public String toString()
 		{
 			return "Render points";
@@ -323,6 +331,7 @@ public abstract class RenderingAction
 			this.y = y;
 		}
 		
+		@Override
 		public void render( RenderingContext ctx )
 		{
 			if( Double.isNaN(x) || Double.isNaN(y) )
@@ -331,6 +340,7 @@ public abstract class RenderingAction
 				ctx.rotate( angle.value, x, y );
 		}
 		
+		@Override
 		public String toString()
 		{
 			return String.format( "Rotation of %s%s", angle, ( Double.isNaN(x) || Double.isNaN(y) ) ? "" : String.format( " center on (%f;%f)", x, y ) );
@@ -348,11 +358,13 @@ public abstract class RenderingAction
 			this.ty = ty;
 		}
 		
+		@Override
 		public void render( RenderingContext ctx )
 		{
 			ctx.translate(tx, ty);
 		}
 		
+		@Override
 		public String toString()
 		{
 			return String.format("Translate with (%f;%f)",tx,ty);

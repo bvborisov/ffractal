@@ -70,12 +70,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX( double x, double y )
+    @Override
+	public double computeX( double x, double y )
     {
       return x;
     }
     
-    public double computeY( double x, double y )
+    @Override
+	public double computeY( double x, double y )
     {
       return y;
     }
@@ -91,12 +93,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return Math.sin(x);
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return Math.sin(y);
     }
@@ -112,12 +116,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return x / ( x*x + y*y );
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return y / ( x*x + y*y );
     }
@@ -133,12 +139,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return x * Math.sin( x*x + y*y ) - y * Math.cos( x*x + y*y );
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return x * Math.cos( x*x + y*y ) + y * Math.sin( x*x + y*y );
     }
@@ -154,12 +162,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return ( x - y ) * ( x + y ) / r(x,y);
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return 2 * x * y / r(x,y);
     }
@@ -175,12 +185,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return theta(x,y) / Math.PI;
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return r(x,y) - 1;
     }
@@ -196,12 +208,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return r(x,y) * Math.sin(theta(x,y)+r(x,y));
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return r(x,y) * Math.cos(theta(x,y)-r(x,y));
     }
@@ -217,12 +231,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return r(x,y) * Math.sin(theta(x,y)*r(x,y));
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return - r(x,y) * Math.cos(theta(x,y)*r(x,y));
     }
@@ -238,12 +254,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return Math.sin(Math.PI*r(x,y)) * theta(x,y) / Math.PI;
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return Math.cos(Math.PI*r(x,y)) * theta(x,y) / Math.PI;
     }
@@ -259,12 +277,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return ( Math.cos(theta(x,y))+Math.sin(r(x,y)) ) / r(x,y);
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return ( Math.sin(theta(x,y))-Math.cos(r(x,y)) ) / r(x,y);
     }
@@ -280,12 +300,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return Math.sin(theta(x,y)) / r(x,y);
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return r(x,y) * Math.cos(theta(x,y));
     }
@@ -301,12 +323,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return Math.sin(theta(x,y)) * Math.cos(r(x,y));
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return Math.cos(theta(x,y)) * Math.sin(r(x,y));
     }
@@ -322,12 +346,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return r(x,y) * ( Math.pow( Math.sin( theta(x,y) + r(x,y) ), 3 ) + Math.pow( Math.cos( theta(x,y) - r(x,y) ), 3 ) );
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return r(x,y) * ( Math.pow( Math.sin( theta(x,y) + r(x,y) ), 3 ) - Math.pow( Math.cos( theta(x,y) - r(x,y) ), 3 ) );
     }
@@ -343,12 +369,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return Math.sqrt( r(x,y) ) * Math.cos( theta(x,y) / 2 + 0 );
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return Math.sqrt( r(x,y) ) * Math.sin( theta(x,y) / 2 + 0 );
     }
@@ -364,12 +392,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return x < 0 ? 2 * x : x;
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return y < 0 ? y / 2 : y;
     }
@@ -392,12 +422,14 @@ public abstract class Variation
       f = 0.2;
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return x + b * Math.sin( y / ( c*c ) );
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return y + e * Math.sin( x / (f*f) );
     }
@@ -413,12 +445,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return 2 * y / ( r(x,y) + 1 );
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return 2 * x / ( r(x,y) + 1 );
     }
@@ -439,12 +473,14 @@ public abstract class Variation
       f = 0.2;
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return x + e * Math.sin( Math.tan( 3*y ) );
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return y + f * Math.sin( Math.tan( 3*x ) );
     }
@@ -460,12 +496,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return Math.exp(x-1) * Math.cos(Math.PI*y);
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return Math.exp(x-1) * Math.sin(Math.PI*y);
     }
@@ -481,12 +519,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return Math.pow( r(x,y), Math.sin( theta(x,y) ) ) * Math.cos( theta(x,y) );
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return Math.pow( r(x,y), Math.sin( theta(x,y) ) ) * Math.sin( theta(x,y) );
     }
@@ -502,12 +542,14 @@ public abstract class Variation
       super(ID);
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return Math.cos( Math.PI*x ) * Math.cosh(y);
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
       return - Math.sin( Math.PI*x ) * Math.sinh(y);
     }
@@ -527,12 +569,14 @@ public abstract class Variation
       c = 2;
     }
     
-    public double computeX(double x,double y)
+    @Override
+	public double computeX(double x,double y)
     {
       return ( ( (r(x,y)+c*c ) % ( 2 *c*c ) ) - c*c + r(x,y) * ( 1-c*c ) ) * Math.cos(theta(x,y));
     }
     
-    public double computeY(double x,double y)
+    @Override
+	public double computeY(double x,double y)
     {
     	return ( ( (r(x,y)+c*c ) % ( 2 *c*c ) ) - c*c + r(x,y) * ( 1-c*c ) ) * Math.sin(theta(x,y));
     }

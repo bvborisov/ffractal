@@ -81,7 +81,6 @@ public class FFWizard
 		public void install()
 		{
 			FFWizard.this.message.setText( message );
-			
 			FFWizard.this.content.removeAll();
 			FFWizard.this.content.repaint();
 			buildContent();
@@ -186,7 +185,7 @@ public class FFWizard
 			double [] def = { 1, 1, 0, 0, 0, 1, 0 };
 			
 			for( int i = 0; i < 7; i++ )
-				wabcdef [i] = new JSpinner( new SpinnerNumberModel(def[i],-10,10,0.001) );
+				wabcdef [i] = new JSpinner( new SpinnerNumberModel(def[i],-1,1,0.001) ); // max values of fun compositions are -1 and 1
 		}
 		
 		@Override
@@ -520,7 +519,7 @@ public class FFWizard
 		add(message);
 
 		content = new JPanel();
-		content.setPreferredSize( new Dimension(300,300) );
+		content.setPreferredSize( new Dimension(300,300) ); // size of pop-up window
 		c.weighty = 1;
 		c.fill = GridBagConstraints.BOTH;
 		bag.setConstraints(content,c);

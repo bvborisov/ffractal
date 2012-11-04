@@ -95,10 +95,14 @@ public class FFWizard
 
 	static int count = 0;
 	
+	public static void incCount()
+	{
+		count++;
+	}
 	protected class InitialStep
 		extends Step implements ChangeListener
 	{
-		JComboBox box;
+		JComboBox<?> box;
 		JTextField name;
 		JSlider color;
 		
@@ -107,12 +111,12 @@ public class FFWizard
 			super( "This is the new flame function creation wizard.\nChoose the creation way:" );
 			
 			name = new JTextField(20);
-			name.setBorder( BorderFactory.createTitledBorder("function name") );
+			name.setBorder( BorderFactory.createTitledBorder("Function name") ); //function
 			name.setOpaque(false);
-			name.setText( String.format( "function#%d", count++ ) );
+			name.setText( String.format( "Function#%d", count++ ) );
 			
 			String [] mode = { "random", "manual" };
-			box = new JComboBox(mode);
+			box = new JComboBox<Object>(mode);
 			
 			color = new JSlider(0,360,random.nextInt(360));
 			color.addChangeListener(this);
@@ -265,11 +269,11 @@ public class FFWizard
 	{
 		JSpinner weight;
 		VariationsComboBox vlist;
-		DefaultListModel vchoose;
+		DefaultListModel<FFVariation> vchoose;
 		
 		public ChooseVariationsStep( )
 		{
-			super( "Choose variations used in the flame function." );
+			super( "Choose variation(s) used in the flame function." );
 		}
 
 		@Override
@@ -310,8 +314,8 @@ public class FFWizard
 			c.gridwidth = GridBagConstraints.REMAINDER;
 			bag.setConstraints( add, c );
 			
-			vchoose = new DefaultListModel();
-			JList list = new JList(vchoose);
+			vchoose = new DefaultListModel<FFVariation>();
+			JList<FFVariation> list = new JList<FFVariation>(vchoose);
 			JScrollPane scrollList = new JScrollPane(list);
 			
 			c.weighty = 1;
@@ -618,34 +622,4 @@ public class FFWizard
 		listeners.remove(listener);
 	}
 	
-	public static FFunction createNewFlameFunction()
-	{
-		FFWizard ffw = new FFWizard();
-		
-		ffw.setVisible(true);
-		
-		synchronized(ffw)
-		{
-			try {
-				ffw.wait();
-			}
-			catch (InterruptedException e)
-			{
-				e.printStackTrace();
-				return null;
-			}
-		}
-		
-		if( ffw.state == FINISHED )
-			return ffw.getFlameFunction();
-		else return null;
-	}
-	
-	public static void main( String ... args )
-	{
-		//FFWizard ffw = new FFWizard();
-		//ffw.setVisible(true);
-		
-		createNewFlameFunction();
-	}
 }

@@ -88,6 +88,19 @@ public class FFunction
 	{
 		return color;
 	}
+	public String toString()
+	{
+		String ffStr = new String("a=" + this.a + ", b=" + this.b + ", c=" + this.c + 
+				", d=" + this.d + ", e=" + this.e + ", f=" + this.f + 
+				", w=" + this.weight + ", v=" 
+		);
+		String varStr = "";
+		for(FFVariation ffv : this.variations) {
+			varStr += ffv.toString();
+			varStr += " ";
+		}
+		return ffStr + varStr;
+	}
 	
 	public void addVariation( double w, Variation v )
 	{

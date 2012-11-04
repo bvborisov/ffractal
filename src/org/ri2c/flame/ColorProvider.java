@@ -68,7 +68,7 @@ public interface ColorProvider
 				double color, double frequency )
 		{
 			return new Color( ARGBTools.getARGBfromTSV( Math.max(10,(int) ( Math.pow(frequency,1/gamma) * 255 )), (float) color * 360.0f, 1, 1 ), true );
-			//return new Color( ARGBTools.getARGBfromTSV( 15, (float) color * 360.0f, 1, 1 ), true );
+		
 		}
 	}
 }

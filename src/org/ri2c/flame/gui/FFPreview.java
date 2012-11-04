@@ -100,8 +100,6 @@ public class FFPreview
 		g2d.setRenderingHint( RenderingHints.KEY_STROKE_CONTROL,      RenderingHints.VALUE_STROKE_PURE );
 
 		
-		//g2d.setColor( Color.WHITE );
-		//g2d.fillRect( 0, 0, thumb.getWidth(), thumb.getHeight() );
 		g2d.setColor( Color.GRAY );
 		
 		g2d.drawLine( 0, thumb.getHeight() / 2, thumb.getWidth(), thumb.getHeight() / 2 );

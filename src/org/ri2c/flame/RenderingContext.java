@@ -178,16 +178,16 @@ public class RenderingContext
 	{
 		points = ByteBuffer.allocateDirect( Double.SIZE * size * 4 ).asDoubleBuffer();
 		int fmax;
-		//String serial;
+		
 		double [] xycf = ctx.getInitialPoint();
-		//Random random = new Random();
+		
 		
 		fmax = 1;
 
 		for( int i = 0; i < 100; i++ )
 			ctx.compute(xycf);
 		
-		//Map<String,Integer> frequencies = new HashMap<String,Integer>();
+		
 		Discretiser fd = new Discretiser( discretiser.xmin, discretiser.ymin, discretiser.xmax, discretiser.ymax, discretiser.width(), discretiser.height() );
 		IntBuffer frequencies = ByteBuffer.allocateDirect( Integer.SIZE * fd.width() * fd.height() ).asIntBuffer();
 		
@@ -196,14 +196,14 @@ public class RenderingContext
 		
 		for( int i = 0; i < size; i++ )
 		{
-			//ctx.getFFunction( random.nextInt(ctx.getFFuntionCount()) ).compute( xycf );
+			
 			ctx.compute( xycf );
 			
 			points.put( xycf [0] );
 			points.put( xycf [1] );
 			points.put( xycf [2] );
 			points.put( 0 );
-			//x	serial = String.format("(%f;%f)", xycf [0], xycf [1]);
+			
 
 			int f = 1;
 			
@@ -215,27 +215,13 @@ public class RenderingContext
 				frequencies.put(index,f);
 				fmax = Math.max(fmax,f);
 			}
-			/*
-			if( frequencies.containsKey(serial) )
-			{
-				 f = frequencies.get(serial)+1;
-				frequencies.put(serial,f);
-				fmax = Math.max(fmax,f);
-			}
-			else
-			{
-				frequencies.put(serial,1);
-			}
-			*/
-			//points.put( Math.log(f) / Math.log(fmax) );
+			
 		}
 
 		// Update frequencies of points
 		
 		for( int i = 0; i < size; i++ )
 		{
-			//serial = String.format("(%f;%f)", points.get(i*4), points.get(i*4+1));
-			//points.put(i*4+3,Math.log(frequencies.get(serial))/Math.log(fmax));
 			int index = fd.convertX(points.get(i*4)) * fd.height() + fd.convertY(points.get(i*4+1));
 			
 			if( index >= 0 && index < frequencies.capacity() )

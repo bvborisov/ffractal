@@ -87,12 +87,6 @@ public class Space
 				my += xyc [1] / size;
 			}
 			
-			/*
-			s.xmin = Math.min( s.xmin, xyc [0] );
-			s.xmax = Math.max( s.xmax, xyc [0] );
-			s.ymin = Math.min( s.ymin, xyc [1] );
-			s.ymax = Math.max( s.ymax, xyc [1] );
-			*/
 		}
 		
 		for( int i = 0; i < size-1; i++ )

@@ -51,37 +51,11 @@ public class Discretiser //converts real to ints
 
 	public int convertX( double x )
 	{
-		/*
-		if( x > xmax )
-		{
-			System.err.printf("warning: x > xmax%n");
-			x = xmax;
-		}
-
-		if( x < xmin )
-		{
-			System.err.printf("warning: x < xmin (%.3f)%n",x);
-			x = xmin;
-		}
-		*/
 		return (int) ( ( width - 1 ) * ( x - xmin ) / ( xmax - xmin ) );
 	}
 
 	public int convertY( double y )
 	{
-		/*
-		if( y > ymax )
-		{
-			System.err.printf("warning: y > ymax%n");
-			y = ymax;
-		}
-
-		if( y < ymin )
-		{
-			System.err.printf("warning: y < ymin%n");
-			y = ymin;
-		}
-		*/
 		return (int) ( ( height - 1 ) * ( y - ymin ) / ( ymax - ymin ) );
 	}
 

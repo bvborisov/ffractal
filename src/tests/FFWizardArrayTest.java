@@ -35,12 +35,14 @@ public class FFWizardArrayTest {
 	@Test
 	public void testFFWizardArray()
 	{
-		String[] names =  {"ArrayFunction#1","ArrayFunction#2","ArrayFunction#3"};
-		ffw1.incCount();
+		String[] names =  {"ArrayFunction#2","ArrayFunction#3","ArrayFunction#4"};
+		FFWizard.incCount();
 		ffwa1.setNames(3);
 		assertTrue("problem with constructor1",ffwa1.getTitle().equals("New Flame Function Array"));
 		assertTrue("problem with constructor2",ffwa1.isVisible()==false);
 		assertTrue("problem with constructor3",ffwa1.isResizable()==false);
-		assertTrue("problem with setNames, length = " + names.length,ffwa1.getFFNames().length==(names).length);
+		for(int i=0;i<3;i++)
+			assertTrue("problem with setNames, length = " + names[i],ffwa1.getFFNames()[i].equals(names[i]));
+	
 	}
 }

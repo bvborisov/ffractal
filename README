@@ -1,4 +1,18 @@
-FFractal is a IFS generator, capable of creating linear and non-linear(a.k.a fractal flames) systems. 
-It has a straightforward UI and is written in java. 
-Here you can find the eclipse project for it.
-The project was created by Gsavin and is forked/modified by Bilyan Borisov under the terms of the GNU license.
+FFractal is a IFS generator, capable of creating linear and non-linear(a.k.a fractal flames) systems. It has a straightforward UI and is written in java. In this repository you can find an executable .jar file called ffractal.jar and all the source files for the project. I have also included eclipse files, should you wish to import the project and modify/use it.
+Below you can find a quick tutorial of how to use the package. For more information on fractal flames, read <a href="http://flam3.com/flame.pdf" target="_"> this </a>.
+HOW TO USE THIS SOFTWARE:
+1. Download the ffractal.jar file to your system.
+2. Execute from command line/shell in the same directory : java -jar ffractal.jar
+3. In the UI that appears, click on the button in the middle of the left panel, named "new array of functions"
+4. Input any number of functions (say 15)
+5. Pick a color 
+6. Pick a variation (say handkerchief)
+7. From the 'rendering actions' tab click (in this order) 'set color provider type' and chose the default 'Basic'. Then click on 'compute points' and pick '1500000' ( for example). Finally click on 'render points'. Should you wish to rearange or delete some actions, click on them in the list below and use the arrows/press the delete key (the same applies for functions in the left panel).
+8. In the panel 'space' click 'best'
+9. In the 'output' section, make the dimensions 2,000 x 2,000 (for example) and pick a file destination of your liking(can be ommited). 
+10. Click on generate fractal and wait.
+11. Wait for it..
+12. Done! Now enjoy, repeat and play around.
+I hope this is interesting to people. 
+The project was created by Gsavin and is forked/modified by Bilyan Borisov under the terms of the GNU license. Should you wish to modify it/redistribute it please do. 
+Contact address : bilyan dot borisov aT gmail dot com

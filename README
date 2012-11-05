@@ -1,5 +1,5 @@
 FFractal is a IFS generator, capable of creating linear and non-linear(a.k.a fractal flames) systems. It has a straightforward UI and is written in java. In this repository you can find an executable .jar file called ffractal.jar and all the source files for the project. I have also included eclipse files, should you wish to import the project and modify/use it.
-Below you can find a quick tutorial of how to use the package. For more information on fractal flames, read <a href="http://flam3.com/flame.pdf" target="_"> this </a>.
+Below you can find a quick tutorial of how to use the package. For more information on fractal flames, read http://flam3.com/flame.pdf .
 HOW TO USE THIS SOFTWARE:
 1. Download the ffractal.jar file to your system.
 2. Execute from command line/shell in the same directory : java -jar ffractal.jar

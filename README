@@ -13,6 +13,22 @@ HOW TO USE THIS SOFTWARE:
 10. Click on generate fractal and wait.
 11. Wait for it..
 12. Done! Now enjoy, repeat and play around.
-I hope this is interesting to people. 
+I hope this is interesting to people.
+If you want to use the full power of this fractal generator read below:
+---------------------------------
+One by one function creation
+---------------------------------
+If you want to create functions one by one use the 'new function' button in the panel 'Functions'. Chose the type of the function - random gives you random coefficients in the range -1..1 and manual lets you input them yourself. In the variations panel, if you wish to create a linear IFS fractal, pick the variation as 'Linear'. Otherwise pick whatever you desire. You then preview your function and it get spilled to the function list on the left. 
+---------------------------------
+Setting a final function
+---------------------------------
+A final function is applied after all points have been plotted and is not iterated ( see the paper I gave a link to at the begining of this). For our purposes this has the same interface as the 'new function' invocation ( so read it ). 
+---------------------------------
+Rendering actions
+---------------------------------
+You can rotate/translate an image. The format for the point of origin/amount of translation is ( x ; y ) where x and y are DOUBLES (0.0 or 0.3123131) and not INTEGERS. Also whitespaces do matter. Direct rendering would speed up the rendering a little bit. Renderer type by default is a dot, but you can pick line or cube/quad curve - try them out. 
+
+That's basically all of it.
+
 The project was created by Gsavin and is forked/modified by Bilyan Borisov under the terms of the GNU license. Should you wish to modify it/redistribute it please do. 
 Contact address : bilyan dot borisov aT gmail dot com

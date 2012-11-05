@@ -1,5 +1,6 @@
 /*
- * This file is part of FFractal.
+ * This file is part of FFractal, created by Guilhelm Savin and modified
+ * by Bilyan Borisov.
  * 
  * FFractal is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,6 +17,9 @@
  * 
  * Copyright 2010
  * 	Guilhelm Savin
+ * 
+ * Copyright 2012
+ *  Bilyan Borisov
  */
 package org.ri2c.flame.gui.output;
 
